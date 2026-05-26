@@ -443,7 +443,6 @@
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="badge">SEBI Registered Research Analyst &amp; Investment Advisor</div>
       <h1>Your SEBI-Compliant<br><em>Website. Live in<br>7 Days.</em></h1>
       <p class="hero-sub">Professional websites for Research Analysts and Investment Advisors — all mandatory compliance pages included, complaint table updated every month, and zero technical headache. We handle everything.</p>
       <div class="hero-btns">
@@ -611,10 +610,7 @@
           <span class="maint-check">✗</span>
           <div>Redesign, rebranding, or major layout changes <span class="maint-note">Quoted separately</span></div>
         </li>
-        <li class="maint-item no">
-          <span class="maint-check">✗</span>
-          <div>Rationale Report Tool <span class="maint-note">Separate standalone product</span></div>
-        </li>
+
       </ul>
     </div>
   </div>
@@ -770,24 +766,22 @@
     }
 
     btn.disabled = true;
-    btn.textContent = 'Sending…';
+    btn.textContent = 'Opening WhatsApp…';
 
-    const subject = encodeURIComponent('New Enquiry from Website — ' + fname);
-    const body = encodeURIComponent(
-      'New enquiry received from your website:\n\n' +
+    const waText = encodeURIComponent(
+      'Hi Sindhupriya, I came across your website and would like to enquire about your services.\n\n' +
       'Name: ' + fname + '\n' +
       'Email: ' + email + '\n' +
       'Phone/WhatsApp: ' + phone + '\n' +
       'Service Interest: ' + (service || 'Not specified') + '\n' +
       'SEBI Registration Type: ' + (reg || 'Not specified') + '\n\n' +
-      'Message:\n' + (message || 'No message provided') + '\n\n' +
-      '---\nSent via website contact form.'
+      'Message: ' + (message || 'No message provided')
     );
 
-    window.location.href = 'mailto:sindhupriyadm@gmail.com?subject=' + subject + '&body=' + body;
+    window.open('https://wa.me/918667645240?text=' + waText, '_blank');
 
     setTimeout(() => {
-      msg.textContent = '✓ Your email client has opened. Please send the email to complete your enquiry. We will respond within 1 business day.';
+      msg.textContent = '✓ WhatsApp has opened with your details. Please send the message to complete your enquiry. We will respond within 1 business day.';
       msg.className = 'form-msg success';
       msg.style.display = 'block';
       btn.disabled = false;
