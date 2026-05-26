@@ -1,524 +1,726 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sindhupriya S — Mutual Fund Distributor</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:#f5f3f0;color:#111;font-family:'Inter',sans-serif;overflow-x:hidden;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sindhupriya S — SEBI Registered Research Analyst</title>
+  <meta name="description" content="SEBI Registered Research Analyst & Investment Advisor. Professional, compliant financial research services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 60px;background:rgba(245,243,240,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,0.08);}
-.nav-logo{display:flex;align-items:center;gap:10px;}
-.nav-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#c0587a,#e08aaa);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:700;}
-.nav-logo-text{font-size:16px;font-weight:700;color:#111;letter-spacing:-0.02em;}
-.nav-logo-sub{font-size:11px;color:#888;font-weight:400;display:block;margin-top:-2px;}
-.nav-links{display:flex;gap:32px;list-style:none;}
-.nav-links a{color:#555;text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;}
-.nav-links a:hover{color:#c0587a;}
-.nav-btns{display:flex;gap:10px;align-items:center;}
-.btn-outline-nav{border:1.5px solid #111;color:#111;padding:9px 20px;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none;transition:all 0.2s;}
-.btn-outline-nav:hover{background:#111;color:#fff;}
-.btn-fill-nav{background:#c0587a;color:#fff;padding:9px 20px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;transition:background 0.2s;}
-.btn-fill-nav:hover{background:#a8436a;}
+    :root {
+      --bg: #f5f3ef;
+      --white: #ffffff;
+      --text: #0a0908;
+      --text2: #3a3834;
+      --text3: #6b6966;
+      --border: rgba(0,0,0,0.09);
+      --border2: rgba(0,0,0,0.15);
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;gap:60px;background:#f5f3f0;position:relative;overflow:hidden;}
-.hero-left{flex:1;max-width:600px;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(192,88,122,0.08);border:1px solid rgba(192,88,122,0.2);color:#c0587a;padding:6px 14px;border-radius:50px;font-size:12px;font-weight:600;letter-spacing:0.06em;margin-bottom:28px;}
-.hero-badge .dot{width:7px;height:7px;background:#4caf82;border-radius:50%;animation:blink 1.5s infinite;}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
-.hero h1{font-size:clamp(42px,5.5vw,72px);font-weight:800;line-height:1.05;letter-spacing:-0.03em;color:#111;margin-bottom:12px;}
-.hero h1 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:#c0587a;}
-.hero-desc{font-size:17px;color:#333;line-height:1.75;max-width:500px;margin:20px 0 40px;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-primary{background:#c0587a;color:#fff;padding:14px 32px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:background 0.2s,transform 0.2s;box-shadow:0 4px 16px rgba(192,88,122,0.3);}
-.btn-primary:hover{background:#a8436a;transform:translateY(-2px);}
-.btn-secondary{border:1.5px solid #111;color:#111;background:#fff;padding:14px 32px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;}
-.btn-secondary:hover{background:#111;color:#fff;}
-.hero-right{flex:0 0 360px;display:flex;flex-direction:column;gap:14px;}
-.hero-card{background:#fff;border:1.5px solid rgba(0,0,0,0.08);border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,0.06);position:relative;overflow:hidden;}
-.hero-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px;}
-.hero-card.c-pink::before{background:#c0587a;}
-.hero-card.c-blue::before{background:#2d6fa3;}
-.hero-card.c-teal::before{background:#3ba09a;}
-.hc-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#888;margin-bottom:6px;font-weight:600;}
-.hc-value{font-size:36px;font-weight:800;color:#111;letter-spacing:-0.03em;line-height:1;}
-.hc-value.pink{color:#c0587a;}
-.hc-value.blue{color:#2d6fa3;}
-.hc-value.teal{color:#3ba09a;}
-.hc-sub{font-size:13px;color:#555;margin-top:5px;}
+      /* Card colours — matching the reference image */
+      --navy:        #1e3a5f;
+      --mauve:       #c4a0d0;
+      --amber:       #d4913a;
+      --rose:        #d4707a;
+      --periwinkle:  #8e9fd4;
+      --purple:      #9a7dc8;
+      --sage:        #7aab8f;
+    }
 
-/* STATS STRIP */
-.strip{background:#111;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
-.strip-item{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,0.6);font-weight:500;letter-spacing:0.06em;text-transform:uppercase;}
-.strip-item strong{color:#fff;font-size:22px;font-weight:800;letter-spacing:-0.02em;margin-right:4px;}
-.strip-div{width:1px;height:24px;background:rgba(255,255,255,0.15);}
+    html { scroll-behavior: smooth; }
 
-/* LIBRARIAN STYLE COLOR CARDS */
-.color-cards-section{padding:80px 60px;background:#f5f3f0;}
-.cc-header{margin-bottom:56px;}
-.cc-tag{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c0587a;font-weight:700;margin-bottom:10px;display:block;}
-.cc-title{font-size:clamp(28px,3.5vw,46px);font-weight:800;color:#111;line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px;}
-.cc-sub{font-size:15px;color:#333;line-height:1.7;max-width:560px;}
-.cc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.cc-card{border-radius:20px;padding:36px 32px;color:#fff;position:relative;overflow:hidden;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;}
-.cc-card.cc1{background:#2a5f8f;}
-.cc-card.cc2{background:#b07fc8;}
-.cc-card.cc3{background:#d4933a;}
-.cc-card.cc4{background:#c0587a;}
-.cc-card.cc5{background:#7c7ecb;}
-.cc-card.cc6{background:#3ba09a;}
-.cc-card .cc-big{font-size:clamp(40px,4vw,60px);font-weight:800;line-height:1;margin-bottom:8px;letter-spacing:-0.03em;}
-.cc-card h3{font-size:17px;font-weight:600;margin-bottom:6px;}
-.cc-card p{font-size:13px;opacity:0.88;line-height:1.55;}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
 
-/* WHAT I OFFER — TradeKit feature grid */
-.features-section{padding:90px 60px;background:#fff;}
-.feat-header{margin-bottom:64px;}
-.feat-tag{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c0587a;font-weight:700;margin-bottom:10px;display:block;}
-.feat-title{font-size:clamp(28px,3.5vw,46px);font-weight:800;color:#111;line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px;}
-.feat-sub{font-size:15px;color:#333;line-height:1.7;max-width:580px;}
-.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.feat-card{background:#f5f3f0;border:1.5px solid rgba(0,0,0,0.07);border-radius:16px;padding:36px 28px;transition:transform 0.3s,box-shadow 0.3s;}
-.feat-card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(0,0,0,0.1);}
-.feat-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;}
-.feat-icon.pink{background:rgba(192,88,122,0.1);}
-.feat-icon.blue{background:rgba(45,111,163,0.1);}
-.feat-icon.purple{background:rgba(155,127,199,0.1);}
-.feat-icon.teal{background:rgba(59,160,154,0.1);}
-.feat-icon.amber{background:rgba(212,147,58,0.1);}
-.feat-icon.indigo{background:rgba(124,126,203,0.1);}
-.feat-card h4{font-size:17px;font-weight:700;color:#111;margin-bottom:10px;line-height:1.3;}
-.feat-card p{font-size:14px;color:#222;line-height:1.75;}
-.feat-badge{display:inline-block;background:rgba(76,175,130,0.12);color:#1e6e42;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:50px;margin-top:14px;}
-.feat-badge.blue{background:rgba(45,111,163,0.1);color:#1a4f7a;}
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(245,243,239,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2.5rem;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.15rem; font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.03em;
+    }
+    .nav-logo span { color: var(--navy); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a {
+      color: var(--text2); text-decoration: none;
+      font-size: 0.875rem; font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--navy) !important;
+      color: #fff !important;
+      font-weight: 700 !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 7px;
+      font-size: 0.875rem !important;
+    }
+    .nav-cta:hover { opacity: 0.88 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 22px; height: 2px; background: var(--text); display: block; border-radius: 2px; }
 
-/* WHY ME — comparison style */
-.whyme-section{padding:90px 60px;background:#f5f3f0;}
-.wm-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.wm-left .feat-tag{color:#c0587a;}
-.wm-title{font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#111;line-height:1.1;letter-spacing:-0.02em;margin-bottom:14px;}
-.wm-desc{font-size:15px;color:#222;line-height:1.75;margin-bottom:32px;}
-.wm-list{list-style:none;display:flex;flex-direction:column;gap:0;}
-.wm-list li{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,0.07);}
-.wm-check{width:22px;height:22px;background:#111;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;flex-shrink:0;margin-top:1px;}
-.wm-list li span{font-size:15px;color:#111;font-weight:500;line-height:1.5;}
-.wm-list li span small{display:block;font-size:13px;color:#444;font-weight:400;margin-top:3px;}
-.wm-right{display:flex;flex-direction:column;gap:16px;margin-top:8px;}
-.wm-card{background:#fff;border:1.5px solid rgba(0,0,0,0.08);border-radius:16px;padding:28px 32px;box-shadow:0 4px 16px rgba(0,0,0,0.05);}
-.wm-card.featured{background:#111;border-color:#111;}
-.wm-card.featured .wm-card-title{color:#fff;}
-.wm-card.featured .wm-card-desc{color:rgba(255,255,255,0.7);}
-.wm-card-num{font-size:28px;font-weight:800;color:#c0587a;margin-bottom:4px;letter-spacing:-0.02em;}
-.wm-card-title{font-size:15px;font-weight:700;color:#111;margin-bottom:6px;}
-.wm-card-desc{font-size:13px;color:#444;line-height:1.65;}
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 7rem 2.5rem 4rem;
+    }
+    .hero-inner {
+      max-width: 1140px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      align-items: center;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--white);
+      border: 1px solid var(--border2);
+      color: var(--navy);
+      font-size: 0.78rem; font-weight: 700;
+      padding: 6px 14px; border-radius: 100px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+    .badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--navy);
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      line-height: 1.08;
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--navy); font-weight: 700; }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--text2);
+      max-width: 480px; line-height: 1.8;
+      margin-bottom: 2rem; font-weight: 500;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--navy); color: #fff;
+      font-weight: 700; font-size: 0.9rem;
+      padding: 0.8rem 1.75rem; border-radius: 8px;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      display: inline-block; font-family: 'Sora', sans-serif;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: var(--text);
+      font-weight: 700; font-size: 0.9rem;
+      padding: 0.8rem 1.75rem; border-radius: 8px;
+      border: 1.5px solid var(--border2);
+      text-decoration: none; cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--navy); background: rgba(30,58,95,0.05); }
 
-/* SIP SECTION */
-.sip-section{padding:90px 60px;background:#fff;}
-.sip-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.sip-points{list-style:none;margin:28px 0 36px;}
-.sip-points li{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:15px;color:#111;font-weight:500;}
-.sip-points li small{display:block;font-size:13px;color:#333;font-weight:400;margin-top:3px;}
-.sip-check{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:1px;font-weight:700;}
-.sip-check.green{background:rgba(76,175,130,0.12);color:#1e6e42;}
-.sip-cards{display:flex;flex-direction:column;gap:14px;}
-.sip-big{background:#c0587a;border-radius:18px;padding:36px;color:#fff;}
-.sip-big .lbl{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;opacity:0.75;margin-bottom:8px;font-weight:600;}
-.sip-big .val{font-size:clamp(52px,6vw,76px);font-weight:800;line-height:1;letter-spacing:-0.04em;}
-.sip-big .sub{font-size:13px;opacity:0.8;margin-top:8px;}
-.sip-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.sip-sm{border-radius:14px;padding:26px;color:#fff;}
-.sip-sm.blue{background:#2d6fa3;}
-.sip-sm.teal{background:#3ba09a;}
-.sip-sm .lbl{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.75;margin-bottom:6px;font-weight:600;}
-.sip-sm .val{font-size:30px;font-weight:800;letter-spacing:-0.02em;}
-.sip-sm .sub{font-size:12px;opacity:0.8;margin-top:4px;}
+    /* ── HERO STAT CARDS ── */
+    .hero-tiles {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    }
+    .htile {
+      border-radius: 20px;
+      padding: 2rem 1.75rem;
+      color: #fff;
+    }
+    .htile.navy        { background: var(--navy); }
+    .htile.mauve       { background: var(--mauve); }
+    .htile.amber       { background: var(--amber); }
+    .htile.rose        { background: var(--rose); }
+    .htile.periwinkle  { background: var(--periwinkle); }
+    .htile.purple      { background: var(--purple); }
+    .htile-num {
+      font-family: 'Sora', sans-serif;
+      font-size: 2.6rem; font-weight: 800;
+      line-height: 1; margin-bottom: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+    .htile-title { font-size: 1rem; font-weight: 800; margin-bottom: 0.25rem; }
+    .htile-sub   { font-size: 0.8rem; opacity: 0.88; line-height: 1.4; font-weight: 500; }
 
-/* CONTACT */
-.contact-section{padding:90px 60px;background:#f5f3f0;}
-.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.contact-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid rgba(0,0,0,0.1);color:#111;padding:6px 14px;border-radius:50px;font-size:12px;font-weight:600;margin-bottom:16px;}
-.contact-title{font-size:clamp(28px,3.5vw,46px);font-weight:800;color:#111;line-height:1.1;letter-spacing:-0.02em;margin-bottom:14px;}
-.contact-desc{font-size:15px;color:#222;line-height:1.75;margin-bottom:32px;}
-.contact-checks{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
-.contact-checks li{display:flex;align-items:center;gap:10px;font-size:14px;color:#111;font-weight:500;}
-.contact-checks li::before{content:'✓';width:20px;height:20px;background:#111;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;flex-shrink:0;}
-.contact-links{display:flex;gap:12px;flex-wrap:wrap;}
-.c-items{display:flex;flex-direction:column;gap:12px;margin-top:0;}
-.c-item{display:flex;align-items:center;gap:14px;padding:16px 20px;background:#fff;border:1.5px solid rgba(0,0,0,0.08);border-radius:12px;transition:border-color 0.2s;}
-.c-item:hover{border-color:#c0587a;}
-.c-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
-.c-icon.pink{background:rgba(192,88,122,0.1);}
-.c-icon.blue{background:rgba(45,111,163,0.1);}
-.c-icon.teal{background:rgba(59,160,154,0.1);}
-.c-info h4{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:2px;font-weight:600;}
-.c-info a,.c-info p{font-size:15px;font-weight:600;color:#111;text-decoration:none;}
-.c-info a:hover{color:#c0587a;}
-.form-wrap{background:#fff;border:1.5px solid rgba(0,0,0,0.08);border-radius:20px;padding:40px;}
-.form-title{font-size:22px;font-weight:800;color:#111;letter-spacing:-0.02em;margin-bottom:4px;}
-.form-note{font-size:13px;color:#888;margin-bottom:24px;display:block;}
-.contact-form{display:flex;flex-direction:column;gap:12px;}
-.contact-form input,.contact-form textarea,.contact-form select{background:#f5f3f0;border:1.5px solid rgba(0,0,0,0.1);color:#111;padding:13px 16px;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;border-radius:10px;outline:none;transition:border-color 0.2s;appearance:none;}
-.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:#c0587a;background:#fff;}
-.contact-form input::placeholder,.contact-form textarea::placeholder{color:#aaa;font-weight:400;}
-.contact-form textarea{resize:vertical;min-height:96px;}
-.form-error{color:#c0587a;font-size:13px;font-weight:500;display:none;}
-.wa-btn{background:#25d366;color:#fff;padding:14px;border-radius:10px;font-size:13px;font-weight:700;letter-spacing:0.04em;text-align:center;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:background 0.2s,transform 0.2s;display:block;width:100%;}
-.wa-btn:hover{background:#1fb658;transform:translateY(-2px);}
-.email-btn{background:#2d6fa3;color:#fff;padding:14px;border-radius:10px;font-size:13px;font-weight:700;letter-spacing:0.04em;text-align:center;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:background 0.2s,transform 0.2s;display:block;width:100%;}
-.email-btn:hover{background:#235a87;transform:translateY(-2px);}
-.form-success{background:#e6f7ef;border:1.5px solid #4caf82;color:#1e6e42;padding:16px;border-radius:10px;font-size:14px;font-weight:600;text-align:center;display:none;margin-bottom:12px;}
+    /* ── SECTION COMMON ── */
+    section { padding: 5rem 2.5rem; }
+    .section-inner { max-width: 1140px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 800;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--navy); margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      line-height: 1.12; letter-spacing: -0.03em;
+      color: var(--text); font-weight: 800; margin-bottom: 1rem;
+    }
+    .section-desc {
+      color: var(--text2); font-size: 1rem;
+      max-width: 560px; line-height: 1.8; margin-bottom: 3rem;
+      font-weight: 500;
+    }
 
-/* FOOTER */
-footer{background:#111;padding:36px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{display:flex;align-items:center;gap:10px;}
-.footer-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#c0587a,#e08aaa);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;}
-.footer-logo-text{font-size:15px;font-weight:700;color:#fff;}
-footer p{font-size:12px;color:rgba(255,255,255,0.4);}
+    /* ── FEATURES GRID (colourful cards like reference) ── */
+    .features-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+    }
+    .feat-tile {
+      border-radius: 20px;
+      padding: 2.25rem 1.9rem;
+      color: #fff;
+      position: relative; overflow: hidden;
+    }
+    .feat-tile.c1 { background: var(--navy); }
+    .feat-tile.c2 { background: var(--mauve); }
+    .feat-tile.c3 { background: var(--amber); }
+    .feat-tile.c4 { background: var(--rose); }
+    .feat-tile.c5 { background: var(--periwinkle); }
+    .feat-tile.c6 { background: var(--purple); }
+    .feat-icon2 {
+      font-size: 1.7rem; margin-bottom: 1.1rem; display: block;
+    }
+    .feat-tile h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.05rem; font-weight: 800;
+      color: #fff; margin-bottom: 0.55rem; line-height: 1.3;
+    }
+    .feat-tile p { font-size: 0.84rem; opacity: 0.9; line-height: 1.65; color: #fff; font-weight: 500; }
+    .feat-badge {
+      display: inline-block; background: rgba(255,255,255,0.25);
+      color: #fff; font-size: 0.7rem; font-weight: 800;
+      padding: 3px 9px; border-radius: 100px; margin-top: 0.75rem;
+    }
 
-/* MOBILE */
-@media(max-width:960px){
-  nav{padding:14px 20px;}.nav-links{display:none;}
-  .hero{flex-direction:column;padding:100px 20px 60px;gap:36px;}
-  .hero-right{flex:none;width:100%;}
-  .strip{padding:16px 20px;gap:12px;}
-  .color-cards-section,.features-section,.whyme-section,.sip-section,.contact-section{padding:60px 20px;}
-  .cc-grid,.feat-grid{grid-template-columns:1fr 1fr;}
-  .wm-inner,.sip-inner,.contact-inner{grid-template-columns:1fr;gap:40px;}
-  .sip-row{grid-template-columns:1fr 1fr;}
-  footer{padding:24px 20px;flex-direction:column;text-align:center;}
-  .form-wrap{padding:28px 20px;}
-}
-@media(max-width:520px){
-  .cc-grid,.feat-grid{grid-template-columns:1fr;}
-  .hero-right{display:none;}
-}
-</style>
+    /* ── PLANS ── */
+    .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .plan-card {
+      background: var(--white);
+      border: 1.5px solid var(--border2);
+      border-radius: 20px; padding: 2.25rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .plan-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.07); }
+    .plan-card.featured { border-color: var(--navy); border-width: 2px; }
+    .plan-tag {
+      display: inline-block;
+      background: var(--navy); color: #fff;
+      font-size: 0.7rem; font-weight: 800;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 100px; margin-bottom: 1.1rem;
+    }
+    .plan-tag.light { background: rgba(30,58,95,0.1); color: var(--navy); }
+    .plan-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.3rem; font-weight: 800; color: var(--text);
+      margin-bottom: 0.6rem; letter-spacing: -0.02em;
+    }
+    .plan-card > p { font-size: 0.875rem; color: var(--text2); margin-bottom: 1.5rem; line-height: 1.7; font-weight: 500; }
+    .plan-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .plan-bullets li {
+      font-size: 0.85rem; color: var(--text2);
+      display: flex; gap: 10px; align-items: flex-start;
+      font-weight: 500;
+    }
+    .plan-bullets li::before {
+      content: '✓'; color: var(--navy);
+      font-weight: 800; flex-shrink: 0; margin-top: 1px;
+    }
+    .plan-bullets li strong { color: var(--text); font-weight: 800; }
+
+    /* ── COMPLIANCE TAGS ── */
+    .compliance-wrap {
+      background: var(--white);
+      border-radius: 20px; padding: 3rem;
+      border: 1px solid var(--border);
+    }
+    .compliance-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+    .ctag {
+      background: var(--bg);
+      border: 1.5px solid var(--border2);
+      color: var(--text);
+      font-size: 0.82rem; font-weight: 700;
+      padding: 8px 16px; border-radius: 100px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .ctag::before { content: ''; width: 6px; height: 6px; background: var(--navy); border-radius: 50%; flex-shrink: 0; }
+
+    /* ── MAINTENANCE ── */
+    .maint-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 2.5rem; max-width: 800px;
+    }
+    .maint-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem; }
+    .maint-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 0.9rem; padding: 0.75rem 1rem; border-radius: 10px;
+      font-weight: 500;
+    }
+    .maint-item.yes { background: rgba(30,58,95,0.05); color: var(--text); }
+    .maint-item.no  { background: rgba(0,0,0,0.025); color: var(--text2); }
+    .maint-check { font-size: 0.85rem; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+    .maint-item.yes .maint-check { color: var(--navy); }
+    .maint-item.no  .maint-check { color: var(--text3); }
+    .maint-note { font-size: 0.74rem; color: var(--text3); margin-top: 2px; display: block; }
+
+    /* ── WHY US — stat-card style like reference image ── */
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .why-card {
+      border-radius: 20px;
+      padding: 2rem 1.75rem;
+      color: #fff;
+    }
+    .why-card.wc1 { background: var(--navy); }
+    .why-card.wc2 { background: var(--rose); }
+    .why-card.wc3 { background: var(--periwinkle); }
+    .why-card.wc4 { background: var(--amber); }
+    .why-num {
+      font-family: 'Sora', sans-serif;
+      font-size: 2.4rem; font-weight: 800;
+      color: rgba(255,255,255,0.28);
+      line-height: 1; margin-bottom: 0.85rem;
+    }
+    .why-card h3 { font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+    .why-card p { font-size: 0.85rem; color: rgba(255,255,255,0.9); line-height: 1.7; font-weight: 500; }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: start; }
+    .contact-info h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 2rem; font-weight: 800; color: var(--text);
+      margin-bottom: 1rem; letter-spacing: -0.03em;
+    }
+    .contact-info p { font-size: 0.9rem; color: var(--text2); line-height: 1.8; margin-bottom: 1.75rem; font-weight: 500; }
+    .c-method {
+      display: flex; gap: 12px; align-items: center;
+      margin-bottom: 0.9rem; padding: 0.9rem 1rem;
+      background: var(--white);
+      border: 1.5px solid var(--border2);
+      border-radius: 12px;
+      font-size: 0.875rem; color: var(--text2);
+      text-decoration: none; transition: border-color 0.2s;
+      font-weight: 500;
+    }
+    .c-method:hover { border-color: var(--navy); }
+    .c-method-icon {
+      width: 38px; height: 38px; background: rgba(30,58,95,0.07);
+      border-radius: 9px; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0; font-size: 1.1rem;
+    }
+    .c-method strong { display: block; color: var(--text); font-size: 0.84rem; font-weight: 800; }
+    .note-box {
+      margin-top: 1.75rem; padding: 1.1rem 1.25rem;
+      background: rgba(30,58,95,0.05);
+      border: 1px solid rgba(30,58,95,0.15);
+      border-radius: 12px;
+      font-size: 0.82rem; color: var(--text2); line-height: 1.75;
+      font-weight: 500;
+    }
+    .note-box strong { color: var(--navy); font-weight: 800; }
+
+    /* FORM */
+    .c-form {
+      background: var(--white);
+      border: 1.5px solid var(--border2);
+      border-radius: 20px; padding: 2.5rem;
+    }
+    .c-form h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.4rem; font-weight: 800; color: var(--text);
+      margin-bottom: 1.5rem; letter-spacing: -0.02em;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .fg { margin-bottom: 1rem; }
+    .fg label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text2); margin-bottom: 0.4rem; }
+    .fg input, .fg textarea, .fg select {
+      width: 100%; background: var(--bg);
+      border: 1.5px solid var(--border2);
+      border-radius: 9px; color: var(--text);
+      font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      padding: 0.7rem 1rem; transition: border-color 0.2s;
+      outline: none; appearance: none;
+      font-weight: 500;
+    }
+    .fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--navy); }
+    .fg textarea { resize: vertical; min-height: 120px; }
+    .fg select option { background: #fff; }
+    .form-btn {
+      width: 100%; background: var(--navy); color: #fff;
+      font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 800;
+      padding: 0.85rem; border-radius: 9px; border: none; cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s; margin-top: 0.5rem;
+    }
+    .form-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .form-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+    .form-msg { margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 9px; font-size: 0.875rem; display: none; }
+    .form-msg.success { background: rgba(30,58,95,0.07); color: var(--navy); border: 1px solid rgba(30,58,95,0.2); }
+    .form-msg.error   { background: rgba(200,50,50,0.06); color: #b83232; border: 1px solid rgba(200,50,50,0.2); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,0.75);
+      padding: 3rem 2.5rem; text-align: center;
+    }
+    .footer-inner { max-width: 1140px; margin: 0 auto; }
+    .f-logo {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.35rem; font-weight: 800;
+      color: #fff; margin-bottom: 0.3rem;
+    }
+    footer p { font-size: 0.82rem; }
+    .f-links { display: flex; justify-content: center; gap: 2rem; list-style: none; margin: 1.5rem 0; }
+    .f-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.82rem; font-weight: 600; }
+    .f-links a:hover { color: #fff; }
+    .f-disc {
+      margin-top: 2rem; padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.74rem; color: rgba(255,255,255,0.45);
+      line-height: 1.8; max-width: 720px; margin-left: auto; margin-right: auto;
+    }
+
+    /* ── DIVIDER / ALT BG ── */
+    .alt-bg { background: var(--white); }
+    hr.div { border: none; border-top: 1px solid var(--border); }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .plans-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+  </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    <div class="nav-logo-icon">S</div>
-    <div>
-      <div class="nav-logo-text">Sindhupriya S</div>
-      <span class="nav-logo-sub">Mutual Fund Distributor</span>
-    </div>
-  </div>
+  <a href="#" class="nav-logo">Sindhupriya <span>S</span></a>
   <ul class="nav-links">
-    <li><a href="#features">What I Offer</a></li>
-    <li><a href="#sip">SIP & Invest</a></li>
-    <li><a href="#whyme">Why Me</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#compliance">Compliance</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
   </ul>
-  <div class="nav-btns">
-    <a href="#whyme" class="btn-outline-nav">Why Me</a>
-    <a href="#contact" class="btn-fill-nav">Start Investing →</a>
+  <div class="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-badge"><span class="dot"></span> AMFI Registered · Udumalpet, Tamil Nadu</div>
-    <h1>Your <em>Mutual Fund</em><br>Journey Starts Here.</h1>
-    <p class="hero-desc">From your first SIP to building a retirement corpus — I guide you every step of the way. Personalized, paperless, and completely transparent.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Start Your SIP →</a>
-      <a href="#features" class="btn-secondary">What I Offer</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-card c-pink">
-      <div class="hc-label">SIP Starting From</div>
-      <div class="hc-value pink">₹500</div>
-      <div class="hc-sub">Per month · No upfront cost</div>
-    </div>
-    <div class="hero-card c-blue">
-      <div class="hc-label">Historical Equity Returns</div>
-      <div class="hc-value blue">12–15%</div>
-      <div class="hc-sub">Long-term average p.a.</div>
-    </div>
-    <div class="hero-card c-teal">
-      <div class="hc-label">Tax Saving under 80C</div>
-      <div class="hc-value teal">₹1.5L</div>
-      <div class="hc-sub">Via ELSS mutual funds</div>
-    </div>
-  </div>
-</section>
-
-<!-- STRIP -->
-<div class="strip">
-  <div class="strip-item"><strong>₹500</strong> Min SIP</div>
-  <div class="strip-div"></div>
-  <div class="strip-item"><strong>100%</strong> Paperless</div>
-  <div class="strip-div"></div>
-  <div class="strip-item"><strong>0</strong> Hidden Charges</div>
-  <div class="strip-div"></div>
-  <div class="strip-item"><strong>12–15%</strong> Avg Returns</div>
-  <div class="strip-div"></div>
-  <div class="strip-item"><strong>PAN India</strong> Service</div>
-  <div class="strip-div"></div>
-  <div class="strip-item"><strong>ELSS</strong> Tax Saving</div>
-</div>
-
-<!-- LIBRARIAN COLOR CARDS -->
-<section class="color-cards-section">
-  <div class="cc-header">
-    <span class="cc-tag">Results That Matter</span>
-    <h2 class="cc-title">Why Smart Investors<br>Choose Mutual Funds</h2>
-    <p class="cc-sub">Every rupee you invest today compounds into significant wealth tomorrow. Here's what mutual fund investing delivers.</p>
-  </div>
-  <div class="cc-grid">
-    <div class="cc-card cc1">
-      <div class="cc-big">₹500</div>
-      <h3>Start Small, Dream Big</h3>
-      <p>Begin your wealth journey with just ₹500/month SIP — no large lump sum needed to get started</p>
-    </div>
-    <div class="cc-card cc2">
-      <div class="cc-big">12–15%</div>
-      <h3>Wealth That Grows</h3>
-      <p>Historical equity mutual fund returns far outperform FDs and savings accounts over the long term</p>
-    </div>
-    <div class="cc-card cc3">
-      <div class="cc-big">₹1.5L</div>
-      <h3>Save Tax Legally</h3>
-      <p>ELSS funds let you claim up to ₹1.5 lakh deduction under Section 80C while growing your wealth</p>
-    </div>
-    <div class="cc-card cc4">
-      <div class="cc-big">0</div>
-      <h3>Hidden Charges</h3>
-      <p>Complete transparency in every transaction — no surprise fees, no hidden costs, ever</p>
-    </div>
-    <div class="cc-card cc5">
-      <div class="cc-big">10+</div>
-      <h3>Fund Categories</h3>
-      <p>Equity, debt, hybrid, ELSS, index funds — right fund for every goal and risk appetite</p>
-    </div>
-    <div class="cc-card cc6">
-      <div class="cc-big">1</div>
-      <h3>Trusted Advisor</h3>
-      <p>You deal directly with me — personalized guidance, regular reviews, zero middlemen</p>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT I OFFER — TradeKit feature cards -->
-<section id="features" class="features-section">
-  <div class="feat-header">
-    <span class="feat-tag">What I Offer</span>
-    <h2 class="feat-title">Everything You Need to<br>Build Wealth Confidently</h2>
-    <p class="feat-sub">Every investment plan, every review, every goal — handled by me so you focus on living life while your money works for you.</p>
-  </div>
-  <div class="feat-grid">
-    <div class="feat-card">
-      <div class="feat-icon pink">📈</div>
-      <h4>SIP — Systematic Investment Plan</h4>
-      <p>Start investing from just ₹500/month. Regular SIPs in equity, debt, or hybrid funds build disciplined wealth automatically over time.</p>
-      <span class="feat-badge">Start from ₹500/mo</span>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon blue">🎯</div>
-      <h4>Goal-Based Financial Planning</h4>
-      <p>Child's education, marriage, home purchase, retirement — I map the right funds to each specific goal with a clear timeline and target corpus.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon purple">🛡️</div>
-      <h4>ELSS — Tax Saving Funds</h4>
-      <p>Save up to ₹1.5 lakh under Section 80C while growing your money in equity. ELSS has the shortest lock-in of 3 years among all 80C options.</p>
-      <span class="feat-badge">Save Tax + Grow Wealth</span>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon teal">🔄</div>
-      <h4>Portfolio Review & Rebalancing</h4>
-      <p>Regular review of your mutual fund portfolio to ensure alignment with your goals. I track fund performance and suggest rebalancing when needed.</p>
-      <span class="feat-badge" style="background:rgba(59,160,154,0.1);color:#1e5c5a;">Free with every plan</span>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon amber">💰</div>
-      <h4>Lump Sum Investments</h4>
-      <p>Got a bonus, maturity amount, or idle savings? I help you deploy lump sum amounts into the right funds at the right time for maximum growth.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon indigo">📱</div>
-      <h4>100% Paperless Onboarding</h4>
-      <p>KYC, account setup, and fund selection done completely online. No paperwork, no branch visits — start investing from your home in minutes.</p>
-      <span class="feat-badge blue">Fully Digital</span>
-    </div>
-  </div>
-</section>
-
-<!-- SIP DEEP DIVE -->
-<section id="sip" class="sip-section">
-  <div class="sip-inner">
+  <div class="hero-inner">
     <div>
-      <span class="feat-tag">Systematic Investment Plan</span>
-      <h2 class="wm-title">The Power of SIP —<br>Small Steps, Big Wealth</h2>
-      <p class="wm-desc">A SIP of just ₹5,000/month for 20 years at 12% returns can grow to over ₹49 lakhs. The earlier you start, the bigger your corpus.</p>
-      <ul class="sip-points">
-        <li>
-          <div class="sip-check green">✓</div>
-          <div><span>Invest as low as ₹500 per month</span><small>No large upfront amount needed to start your wealth journey</small></div>
-        </li>
-        <li>
-          <div class="sip-check green">✓</div>
-          <div><span>Rupee cost averaging benefit</span><small>Buy more units when markets fall, fewer when markets rise — automatic averaging</small></div>
-        </li>
-        <li>
-          <div class="sip-check green">✓</div>
-          <div><span>Power of compounding</span><small>Returns on returns — your wealth multiplies exponentially over long periods</small></div>
-        </li>
-        <li>
-          <div class="sip-check green">✓</div>
-          <div><span>Pause, stop, or increase anytime</span><small>Full flexibility — no penalties for pausing or stopping your SIP</small></div>
-        </li>
-        <li>
-          <div class="sip-check green">✓</div>
-          <div><span>Auto-debit from your bank account</span><small>Set once and forget — SIP amount is debited automatically every month</small></div>
-        </li>
-      </ul>
-      <a href="#contact" class="btn-primary" style="display:inline-block;">Start My SIP Today →</a>
-    </div>
-    <div class="sip-cards">
-      <div class="sip-big">
-        <div class="lbl">Monthly SIP Starting From</div>
-        <div class="val">₹500</div>
-        <div class="sub">Per month · Auto-debit · Fully guided by me</div>
+      <div class="badge">SEBI Registered Research Analyst &amp; Investment Advisor</div>
+      <h1>Your SEBI-Compliant<br><em>Website. Live in<br>7 Days.</em></h1>
+      <p class="hero-sub">Professional websites for Research Analysts and Investment Advisors — all mandatory compliance pages included, complaint table updated every month, and zero technical headache. We handle everything.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Get Your RA/RIA Website →</a>
+        <a href="#services" class="btn-outline">View Features</a>
       </div>
-      <div class="sip-row">
-        <div class="sip-sm blue">
-          <div class="lbl">Avg Equity Returns</div>
-          <div class="val">12–15%</div>
-          <div class="sub">Historical p.a.</div>
+    </div>
+    <div>
+      <div class="hero-tiles">
+        <div class="htile navy">
+          <div class="htile-num">7</div>
+          <div class="htile-title">Days to go live</div>
+          <div class="htile-sub">From onboarding to live</div>
         </div>
-        <div class="sip-sm teal">
-          <div class="lbl">Tax Benefit</div>
-          <div class="val">ELSS</div>
-          <div class="sub">80C · ₹1.5L limit</div>
+        <div class="htile mauve">
+          <div class="htile-num">12×</div>
+          <div class="htile-title">Complaint updates/year</div>
+          <div class="htile-sub">Every month, without fail</div>
+        </div>
+        <div class="htile rose">
+          <div class="htile-num">0</div>
+          <div class="htile-title">Follow-ups missed</div>
+          <div class="htile-sub">Every client gets timely attention</div>
+        </div>
+        <div class="htile amber">
+          <div class="htile-num">RA+RIA</div>
+          <div class="htile-title">Both covered</div>
+          <div class="htile-sub">Research Analyst &amp; Investment Advisor</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY ME -->
-<section id="whyme" class="whyme-section">
-  <div class="wm-inner">
-    <div class="wm-left">
-      <span class="feat-tag">Why Choose Me</span>
-      <h2 class="wm-title">A Trusted Partner,<br>Not Just a Distributor</h2>
-      <p class="wm-desc">I don't just sell funds. I understand your goals, map the right investment strategy, and stay with you through every market cycle.</p>
-      <ul class="wm-list">
-        <li>
-          <div class="wm-check">✓</div>
-          <span>Personal attention — always deal directly with me<small>No juniors, no call centres — you get my direct number</small></span>
+<!-- FEATURES -->
+<section id="services" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-label">What You Get</div>
+    <h2 class="section-title">Built for Regulated Professionals</h2>
+    <p class="section-desc">Every page, every update, every compliance requirement — handled by us so you can focus on your research.</p>
+    <div class="features-grid">
+      <div class="feat-tile c1">
+        <span class="feat-icon2">📄</span>
+        <h3>All Mandatory SEBI Pages</h3>
+        <p>Investor Charter, MITC, Disclaimer &amp; Disclosure, Complaint Board, Grievance Redressal, Conflict of Interest, Privacy Policy, Refund Policy, Terms of Use — all built in.</p>
+      </div>
+      <div class="feat-tile c2">
+        <span class="feat-icon2">🔄</span>
+        <h3>Complaint Table — Updated Monthly</h3>
+        <p>BSE requires monthly complaint data before the 7th. We update it 12 times a year — every month — without you lifting a finger.</p>
+        <span class="feat-badge">Free with every plan</span>
+      </div>
+      <div class="feat-tile c3">
+        <span class="feat-icon2">📱</span>
+        <h3>Mobile-Friendly Design</h3>
+        <p>Looks sharp on every device — desktop, tablet, and mobile. Responsive, fast, and accessibility compliant as per basic standards.</p>
+      </div>
+      <div class="feat-tile c4">
+        <span class="feat-icon2">⚡</span>
+        <h3>Live in 7 Business Days</h3>
+        <p>From onboarding to live website in 7 working days. We know exactly what an RA and RIA website needs — there is no learning curve on our side.</p>
+      </div>
+      <div class="feat-tile c5">
+        <span class="feat-icon2">✉️</span>
+        <h3>Professional Email &amp; Add-Ons</h3>
+        <p>Professional email setup (info@yourfirm.com), custom domain configuration, and other add-ons available as per our standard packages.</p>
+        <span class="feat-badge">Price on request</span>
+      </div>
+      <div class="feat-tile c6">
+        <span class="feat-icon2">🛡️</span>
+        <h3>SEBI &amp; BSE Compliant</h3>
+        <p>Exclusively built for SEBI Registered RA &amp; RIA firms. Every requirement SEBI and BSE mandate is covered — not an afterthought.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section style="padding: 5rem 2.5rem; background: var(--bg);">
+  <div class="section-inner">
+    <div class="section-label">Plans</div>
+    <h2 class="section-title">Just Got Your SEBI Registration?<br>We're Built for You.</h2>
+    <p class="section-desc">A new Research Analyst or Investment Advisor needs a SEBI-compliant website from day one — but the upfront investment can feel heavy. Our subscription model removes that barrier completely.</p>
+    <div class="plans-grid">
+      <div class="plan-card featured">
+        <div class="plan-tag">Subscription</div>
+        <h3>Monthly Subscription Plan</h3>
+        <p>Start your compliant digital presence with no large upfront payment. Everything included from day one.</p>
+        <ul class="plan-bullets">
+          <li>No large upfront payment — start from ₹1,999/month</li>
+          <li>Domain &amp; Hosting fully included — zero extra cost to start</li>
+          <li>Website live before you begin client operations</li>
+          <li>We know exactly what pages SEBI and BSE require</li>
+          <li>Complaint table handled — never miss the 7th of any month</li>
+        </ul>
+      </div>
+      <div class="plan-card">
+        <div class="plan-tag light">One-Time Build</div>
+        <h3>Why Consider the One-Time Build Instead?</h3>
+        <p>Own your website outright. Better long-term economics and a genuine business asset.</p>
+        <ul class="plan-bullets">
+          <li><strong>Lower long-term cost</strong> — Pay once, own the site. Monthly maintenance is just ₹500 vs a full subscription fee every month</li>
+          <li><strong>You own the domain &amp; website</strong> — No dependency. Domain is yours. On exit, we hand over a full backup — no data lost, no lock-in</li>
+          <li><strong>Try, then decide</strong> — Get your site built. After 3 months, if you want to self-manage, you can. You own the asset</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section id="compliance" class="alt-bg" style="padding: 5rem 2.5rem;">
+  <div class="section-inner">
+    <div class="compliance-wrap">
+      <div class="section-label">Compliance Coverage</div>
+      <h2 class="section-title" style="margin-bottom:0.5rem;">Every Page SEBI &amp; BSE Requires</h2>
+      <p style="color:var(--text2); font-size:0.9rem; margin-bottom:0; font-weight:500;">All built-in, maintained, and updated — not an afterthought.</p>
+      <div class="compliance-tags">
+        <span class="ctag">Investor Charter</span>
+        <span class="ctag">MITC</span>
+        <span class="ctag">Disclaimer &amp; Disclosure</span>
+        <span class="ctag">Complaint Board</span>
+        <span class="ctag">Grievance Redressal</span>
+        <span class="ctag">Conflict of Interest</span>
+        <span class="ctag">Privacy Policy</span>
+        <span class="ctag">Refund Policy</span>
+        <span class="ctag">Terms of Use</span>
+        <span class="ctag">Monthly BSE Complaint Table</span>
+        <span class="ctag">SEBI Registration Details</span>
+        <span class="ctag">Fee Disclosure</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAINTENANCE -->
+<section style="padding: 5rem 2.5rem; background: var(--bg);">
+  <div class="section-inner">
+    <div class="section-label">Maintenance</div>
+    <h2 class="section-title">Monthly Maintenance — What's Covered</h2>
+    <p class="section-desc">All plans — subscription and one-time — include monthly maintenance. Here is exactly what is covered and what is not.</p>
+    <div class="maint-box">
+      <ul class="maint-list">
+        <li class="maint-item yes">
+          <span class="maint-check">✓</span>
+          <div>Complaint table update — every month without fail (12 times/year)</div>
         </li>
-        <li>
-          <div class="wm-check">✓</div>
-          <span>Goal-based approach — not product-based selling<small>I recommend funds based on YOUR goals, not commissions</small></span>
+        <li class="maint-item yes">
+          <span class="maint-check">✓</span>
+          <div>Minor text corrections — phone number, email, fee changes, small content edits</div>
         </li>
-        <li>
-          <div class="wm-check">✓</div>
-          <span>Regular portfolio review — included always<small>I monitor your portfolio and alert you when action is needed</small></span>
+        <li class="maint-item yes">
+          <span class="maint-check">✓</span>
+          <div>Basic uptime monitoring and support queries</div>
         </li>
-        <li>
-          <div class="wm-check">✓</div>
-          <span>Fully paperless — onboarding in minutes<small>KYC and account setup done digitally from your phone</small></span>
+        <li class="maint-item no">
+          <span class="maint-check">✗</span>
+          <div>New pages or structural changes <span class="maint-note">Quoted separately</span></div>
         </li>
-        <li>
-          <div class="wm-check">✓</div>
-          <span>Available on WhatsApp — quick responses<small>No waiting days for a reply — I respond fast</small></span>
+        <li class="maint-item no">
+          <span class="maint-check">✗</span>
+          <div>Accessibility audit-based code fixes <span class="maint-note">Quoted separately</span></div>
         </li>
-        <li>
-          <div class="wm-check">✓</div>
-          <span>Serving clients across India from Udumalpet, TN<small>Location is no barrier — fully remote service available</small></span>
+        <li class="maint-item no">
+          <span class="maint-check">✗</span>
+          <div>Redesign, rebranding, or major layout changes <span class="maint-note">Quoted separately</span></div>
+        </li>
+        <li class="maint-item no">
+          <span class="maint-check">✗</span>
+          <div>Rationale Report Tool <span class="maint-note">Separate standalone product</span></div>
         </li>
       </ul>
     </div>
-    <div class="wm-right">
-      <div class="wm-card featured">
-        <div class="wm-card-num">₹500</div>
-        <div class="wm-card-title">Minimum SIP to start</div>
-        <div class="wm-card-desc">No large upfront amount. Begin your journey with just ₹500 per month and scale up as your income grows.</div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" class="alt-bg" style="padding: 5rem 2.5rem;">
+  <div class="section-inner">
+    <div class="section-label">Why Us</div>
+    <h2 class="section-title">No Learning Curve. No Surprises.</h2>
+    <p class="section-desc">We know exactly what an RA and RIA website needs. You focus on your clients — we handle the compliance and technology.</p>
+    <div class="why-grid">
+      <div class="why-card wc1">
+        <div class="why-num">01</div>
+        <h3>SEBI-Specific Expertise</h3>
+        <p>Built exclusively for Research Analysts and Investment Advisors. We know every page SEBI and BSE require — not generalists guessing at compliance.</p>
       </div>
-      <div class="wm-card">
-        <div class="wm-card-num" style="color:#2d6fa3;">0</div>
-        <div class="wm-card-title">Hidden charges or fees</div>
-        <div class="wm-card-desc">Complete transparency in every transaction. You always know exactly where your money is going.</div>
+      <div class="why-card wc2">
+        <div class="why-num">02</div>
+        <h3>Monthly Updates Handled</h3>
+        <p>BSE requires complaint data updated before the 7th of every month. We handle all 12 updates per year — without you sending a single reminder.</p>
       </div>
-      <div class="wm-card">
-        <div class="wm-card-num" style="color:#3ba09a;">100%</div>
-        <div class="wm-card-title">Paperless process</div>
-        <div class="wm-card-desc">From KYC to SIP setup — everything done online. No branch visits, no physical forms.</div>
+      <div class="why-card wc3">
+        <div class="why-num">03</div>
+        <h3>No Lock-In</h3>
+        <p>You own your domain and data. On exit from any plan, we hand over a complete backup. No data lost, no dependencies, no surprises.</p>
+      </div>
+      <div class="why-card wc4">
+        <div class="why-num">04</div>
+        <h3>Live in 7 Business Days</h3>
+        <p>From onboarding form to live, compliant website in 7 working days. We have a clear, tested process — no delays from our side.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact-section">
-  <div class="contact-inner">
-    <div>
-      <div class="contact-badge">✦ AMFI Registered · Udumalpet, TN</div>
-      <h2 class="contact-title">Ready to Start Your<br>Investment Journey?</h2>
-      <p class="contact-desc">Fill in your details and I will get back to you within one business day. Let's build your financial future together.</p>
-      <ul class="contact-checks">
-        <li>SIP starting from ₹500/month</li>
-        <li>Zero hidden charges</li>
-        <li>100% paperless onboarding</li>
-        <li>ELSS tax saving available</li>
-        <li>Regular portfolio reviews included</li>
-      </ul>
-      <div class="c-items">
-        <div class="c-item">
-          <div class="c-icon pink">📱</div>
-          <div class="c-info">
-            <h4>WhatsApp / Call</h4>
-            <a href="tel:+918667645240">+91 86676 45240</a>
+<section id="contact" style="padding: 5rem 2.5rem; background: var(--bg);">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">Get in Touch</div>
+        <h2>Let's Get Your Compliant Website Live</h2>
+        <p>Fill in the form and we'll respond within one business day. Or reach us directly on email or WhatsApp.</p>
+        <a href="mailto:sindhupriyadm@gmail.com" class="c-method">
+          <div class="c-method-icon">✉️</div>
+          <div>
+            <strong>Email</strong>
+            sindhupriyadm@gmail.com
           </div>
-        </div>
-        <div class="c-item">
-          <div class="c-icon blue">✉️</div>
-          <div class="c-info">
-            <h4>Email</h4>
-            <a href="mailto:Sindhupriyadm@gmail.com">Sindhupriyadm@gmail.com</a>
+        </a>
+        <a href="https://wa.me/918667645240" target="_blank" rel="noopener" class="c-method">
+          <div class="c-method-icon">💬</div>
+          <div>
+            <strong>WhatsApp</strong>
+            +91 86676 45240
           </div>
-        </div>
-        <div class="c-item">
-          <div class="c-icon teal">📍</div>
-          <div class="c-info">
-            <h4>Location</h4>
-            <p>Udumalpet, Tamil Nadu · PAN India</p>
-          </div>
+        </a>
+        <div class="note-box">
+          <strong>All prices included in subscription.</strong><br>
+          We respond to all enquiries within 1 business day. For urgent queries, WhatsApp is fastest.
         </div>
       </div>
-    </div>
-    <div class="form-wrap">
-      <div class="form-title">Get In Touch</div>
-      <span class="form-note">I respond within 1 business day · Sends to WhatsApp & Email</span>
-      <div class="form-success" id="formSuccess">✅ Sent! I'll get back to you within 24 hours.</div>
-      <div class="contact-form" id="contactForm">
-        <input type="text" id="f-name" placeholder="Full Name *">
-        <input type="tel" id="f-phone" placeholder="WhatsApp Number *">
-        <input type="email" id="f-email" placeholder="Email Address (optional)">
-        <select id="f-service">
-          <option value="" disabled selected>I am interested in...</option>
-          <option>SIP — Monthly Investing</option>
-          <option>Lump Sum Investment</option>
-          <option>ELSS — Tax Saving</option>
-          <option>Goal-Based Planning</option>
-          <option>Portfolio Review</option>
-          <option>Not sure yet — need guidance</option>
-        </select>
-        <textarea id="f-msg" placeholder="Tell me about your financial goal (optional)..."></textarea>
-        <div class="form-error" id="formError">⚠️ Please enter your name and WhatsApp number.</div>
-        <button class="wa-btn" onclick="sendWhatsApp()">💬 Send via WhatsApp</button>
-        <button class="email-btn" onclick="sendEmail()">📧 Send via Email</button>
+      <div class="c-form">
+        <h3>Send Us a Message</h3>
+        <div class="form-row">
+          <div class="fg">
+            <label for="fname">Full Name *</label>
+            <input type="text" id="fname" placeholder="Your name" required />
+          </div>
+          <div class="fg">
+            <label for="phone">Phone / WhatsApp *</label>
+            <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required />
+          </div>
+        </div>
+        <div class="fg">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="you@yourfirm.com" required />
+        </div>
+        <div class="fg">
+          <label for="service">I'm interested in</label>
+          <select id="service">
+            <option value="">Select a service</option>
+            <option>Subscription Plan (Monthly)</option>
+            <option>One-Time Build</option>
+            <option>Just got SEBI Registration — need advice</option>
+            <option>Professional Email Setup</option>
+            <option>Other / Not sure yet</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="reg">SEBI Registration Type</label>
+          <select id="reg">
+            <option value="">Select type</option>
+            <option>Research Analyst (RA)</option>
+            <option>Investment Advisor (RIA)</option>
+            <option>Both RA + RIA</option>
+            <option>Applied / Pending</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="Tell us about your firm, current website status, or any specific requirements…"></textarea>
+        </div>
+        <button type="button" class="form-btn" onclick="submitForm()">Send Message →</button>
+        <div class="form-msg" id="formMsg"></div>
       </div>
     </div>
   </div>
@@ -526,55 +728,93 @@ footer p{font-size:12px;color:rgba(255,255,255,0.4);}
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">
-    <div class="footer-logo-icon">S</div>
-    <div class="footer-logo-text">Sindhupriya S</div>
+  <div class="footer-inner">
+    <div class="f-logo">Sindhupriya S</div>
+    <p>SEBI Registered Research Analyst &amp; Investment Advisor Website Specialist</p>
+    <ul class="f-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#compliance">Compliance</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="mailto:sindhupriyadm@gmail.com">Email</a></li>
+    </ul>
+    <div class="f-disc">
+      <strong style="color:rgba(255,255,255,0.65);">Disclaimer:</strong> Services are exclusively offered to SEBI Registered Research Analysts and Investment Advisors. All website content is for informational purposes only. Past compliance records do not guarantee future regulatory compliance. Users are responsible for verifying all regulatory requirements with SEBI and BSE independently. Sindhupriya S is not a legal or regulatory advisor.
+    </div>
+    <p style="margin-top:1.5rem; font-size:0.72rem; color:rgba(255,255,255,0.3);">© 2025 Sindhupriya S. All rights reserved.</p>
   </div>
-  <p>© 2025 · Mutual Fund Distributor · Udumalpet, Tamil Nadu</p>
-  <p style="color:rgba(255,255,255,0.25);font-size:12px;">sindhupriyahub.github.io</p>
 </footer>
 
 <script>
-function getFormData(){
-  return {
-    name: document.getElementById('f-name').value.trim(),
-    phone: document.getElementById('f-phone').value.trim(),
-    email: document.getElementById('f-email').value.trim(),
-    service: document.getElementById('f-service').value,
-    msg: document.getElementById('f-msg').value.trim()
-  };
-}
-function sendWhatsApp(){
-  var d = getFormData();
-  var err = document.getElementById('formError');
-  if(!d.name||!d.phone){err.style.display='block';return;}
-  err.style.display='none';
-  var text="Hi Sindhupriya! 👋\n\nNew enquiry from your website:\n\n"
-    +"Name: "+d.name+"\nPhone: "+d.phone+"\n"
-    +(d.email?"Email: "+d.email+"\n":"")
-    +(d.service?"Interested In: "+d.service+"\n":"")
-    +(d.msg?"\nMessage:\n"+d.msg:"");
-  window.open("https://wa.me/918667645240?text="+encodeURIComponent(text),'_blank');
-  document.getElementById('formSuccess').style.display='block';
-  document.getElementById('contactForm').style.opacity='0.5';
-  document.getElementById('contactForm').style.pointerEvents='none';
-}
-function sendEmail(){
-  var d = getFormData();
-  var err = document.getElementById('formError');
-  if(!d.name||!d.phone){err.style.display='block';return;}
-  err.style.display='none';
-  var subject="Investment Enquiry from "+d.name+" — sindhupriyahub.github.io";
-  var body="Hi Sindhupriya,\n\nNew investment enquiry from your website:\n\n"
-    +"Name: "+d.name+"\nPhone: "+d.phone+"\n"
-    +(d.email?"Email: "+d.email+"\n":"")
-    +(d.service?"Interested In: "+d.service+"\n":"")
-    +(d.msg?"\nMessage:\n"+d.msg:"");
-  window.open("mailto:Sindhupriyadm@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body),'_blank');
-  document.getElementById('formSuccess').style.display='block';
-  document.getElementById('contactForm').style.opacity='0.5';
-  document.getElementById('contactForm').style.pointerEvents='none';
-}
+  function submitForm() {
+    const fname   = document.getElementById('fname').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
+    const service = document.getElementById('service').value;
+    const reg     = document.getElementById('reg').value;
+    const message = document.getElementById('message').value.trim();
+    const msg = document.getElementById('formMsg');
+    const btn = document.querySelector('.form-btn');
+
+    if (!fname || !email || !phone) {
+      msg.textContent = 'Please fill in all required fields (Name, Email, Phone).';
+      msg.className = 'form-msg error';
+      msg.style.display = 'block';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      msg.textContent = 'Please enter a valid email address.';
+      msg.className = 'form-msg error';
+      msg.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    const subject = encodeURIComponent('New Enquiry from Website — ' + fname);
+    const body = encodeURIComponent(
+      'New enquiry received from your website:\n\n' +
+      'Name: ' + fname + '\n' +
+      'Email: ' + email + '\n' +
+      'Phone/WhatsApp: ' + phone + '\n' +
+      'Service Interest: ' + (service || 'Not specified') + '\n' +
+      'SEBI Registration Type: ' + (reg || 'Not specified') + '\n\n' +
+      'Message:\n' + (message || 'No message provided') + '\n\n' +
+      '---\nSent via website contact form.'
+    );
+
+    window.location.href = 'mailto:sindhupriyadm@gmail.com?subject=' + subject + '&body=' + body;
+
+    setTimeout(() => {
+      msg.textContent = '✓ Your email client has opened. Please send the email to complete your enquiry. We will respond within 1 business day.';
+      msg.className = 'form-msg success';
+      msg.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send Message →';
+    }, 1000);
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  document.querySelector('.hamburger').addEventListener('click', () => {
+    const nl = document.querySelector('.nav-links');
+    nl.style.display = nl.style.display === 'flex' ? 'none' : 'flex';
+    nl.style.flexDirection = 'column';
+    nl.style.position = 'absolute';
+    nl.style.top = '64px';
+    nl.style.right = '1.5rem';
+    nl.style.background = '#f5f3ef';
+    nl.style.padding = '1rem 1.5rem';
+    nl.style.borderRadius = '12px';
+    nl.style.border = '1px solid rgba(0,0,0,0.1)';
+    nl.style.boxShadow = '0 8px 30px rgba(0,0,0,0.1)';
+  });
 </script>
 </body>
 </html>
